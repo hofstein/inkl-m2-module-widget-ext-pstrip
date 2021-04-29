@@ -1,0 +1,13 @@
+{
+	"name": "inkl/m2-module-widget-ext-pstrip",
+	"description": "strip p tags around widgets",
+	"type": "magento2-module",
+	"autoload": {
+		"files": [
+			"src/registration.php"
+		],
+		"psr-4": {
+			"Inkl\\WidgetExtPStrip\\": "src"
+		}
+	}
+}
