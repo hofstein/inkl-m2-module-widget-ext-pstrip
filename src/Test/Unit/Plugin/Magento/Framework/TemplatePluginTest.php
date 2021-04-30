@@ -32,7 +32,7 @@ class TemplatePluginTest extends TestCase
     }
 
     /**
-     * @dataProvider replacePTagsDataProvider
+     * @dataProvider dataProviderTestReplacePTags
      */
     public function testReplacePTags(string $value, string $expected)
     {
@@ -43,7 +43,7 @@ class TemplatePluginTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function replacePTagsDataProvider(): array
+    public function dataProviderTestReplacePTags(): array
     {
         return [
             [
