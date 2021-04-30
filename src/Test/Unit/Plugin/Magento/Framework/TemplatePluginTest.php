@@ -51,6 +51,10 @@ class TemplatePluginTest extends TestCase
                 ''
             ],
             [
+                '<p>&nbsp;</p>',
+                ''
+            ],
+            [
                 '{{widget name="test"}}',
                 '{{widget name="test"}}'
             ],

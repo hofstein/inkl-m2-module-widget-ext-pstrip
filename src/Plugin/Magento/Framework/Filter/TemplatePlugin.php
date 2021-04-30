@@ -29,6 +29,7 @@ class TemplatePlugin
         if ($this->config->isEnabled()) {
             $value = preg_replace('/<p>({{widget.*?}})<\/p>/is', '$1', $value);
             $value = preg_replace('/<p><\/p>/is', '$1', $value);
+            $value = preg_replace('/<p>&nbsp;<\/p>/is', '$1', $value);
         }
 
         return $value;
