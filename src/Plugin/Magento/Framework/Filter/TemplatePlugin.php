@@ -26,7 +26,7 @@ class TemplatePlugin
 
     public function replacePTags(string $value): string
     {
-        if ($this->config->isEnabled()) {
+        if ($this->config->isEnabled() && is_string($value)) {
             $value = preg_replace('/<p>({{widget.*?}})<\/p>/is', '$1', $value);
             $value = preg_replace('/<p><\/p>/is', '$1', $value);
             $value = preg_replace('/<p>&nbsp;<\/p>/is', '$1', $value);
