@@ -21,12 +21,16 @@ class TemplatePlugin
      */
     public function beforeFilter(Template $subject, $value)
     {
-        return [$this->replacePTags($value)];
+        if (is_string($value)) {
+            $value = $this->replacePTags($value);
+        }
+        
+        return [$value];
     }
 
     public function replacePTags(string $value): string
     {
-        if ($this->config->isEnabled() && is_string($value)) {
+        if ($this->config->isEnabled()) {
             $value = preg_replace('/<p>({{widget.*?}})<\/p>/is', '$1', $value);
             $value = preg_replace('/<p><\/p>/is', '$1', $value);
             $value = preg_replace('/<p>&nbsp;<\/p>/is', '$1', $value);
